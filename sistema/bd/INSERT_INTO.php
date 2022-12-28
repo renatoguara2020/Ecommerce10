@@ -17,9 +17,9 @@ try {
   $stmt->bindValue(':firstname', $produto->setPreco, PDO::PARAM_STR);
   $stmt->bindValue(':nome', $produto->setNome, PDO::PARAM_STR);
   $stmt->exec();
-  echo "New record created successfully";
+  echo "New record created successfully". $produto->getNome();
 } catch(PDOException $e) {
-  echo $sql . "<br>" . $e->getMessage();
+  echo $sql->error() . "<br>" . $e->getMessage();
 }
 
 $conn = null;
