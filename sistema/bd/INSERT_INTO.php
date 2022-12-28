@@ -14,8 +14,8 @@ try {
   VALUES (:firstname, :lastname, :email)");
   $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
   // use exec() because no results are returned
-  $stmt->bindValue(':firstname', $produto->getPreco(), PDO::PARAM_STR);
-  $stmt->bindValue(':nome', $produto->getNome(), PDO::PARAM_STR);
+  $stmt->bindValue(':firstname', $produto->setPreco, PDO::PARAM_STR);
+  $stmt->bindValue(':nome', $produto->setNome, PDO::PARAM_STR);
   $stmt->exec();
   echo "New record created successfully";
 } catch(PDOException $e) {
