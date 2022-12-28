@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `categorias` (
-  `id_categoria` int(11) NOT NULL,
+  `id_categoria` int(11) NOT NULL
   `id_usuario` int(11) NOT NULL,
   `nome_categoria` varchar(100) NOT NULL,
   `dataCaptura` date NOT NULL

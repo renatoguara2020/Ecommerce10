@@ -7,7 +7,7 @@ class clientes{
 
 		
 
-		$sql = "INSERT into clientes (id_usuario, nome, sobrenome, endereco, email, telefone, cpf) VALUES ('$dados[0]', '$dados[1]', 
+		$sql = "INSERT INTO clientes (id_usuario, nome, sobrenome, endereco, email, telefone, cpf) VALUES ('$dados[0]', '$dados[1]', 
 		   '$dados[2]',
 		   '$dados[3]',
 			'$dados[4]',
