@@ -1,17 +1,22 @@
 <?php
+
+require_once ('./sistema/classes/Produto.php');
 $servername = "localhost";
 $username = "username";
 $password = "password";
 $dbname = "myDBPDO";
-
+ $produto = new Produto();
 try {
   $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
   // set the PDO error mode to exception
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  $sql = "INSERT INTO MyGuests (firstname, lastname, email)
-  VALUES ('John', 'Doe', 'john@example.com')";
+  $stmt->$conn->prepare("INSERT INTO MyGuests (firstname, lastname, email)
+  VALUES (:firstname, :lastname, :email)");
+  $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
   // use exec() because no results are returned
-  $conn->exec($sql);
+  $stmt->bindValue(':firstname', $produto->getPreco(), PDO::PARAM_STR);
+  $stmt->bindValue(':nome', $produto->getNome(), PDO::PARAM_STR);
+  $stmt->exec();
   echo "New record created successfully";
 } catch(PDOException $e) {
   echo $sql . "<br>" . $e->getMessage();
